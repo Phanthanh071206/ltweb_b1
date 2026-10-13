@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Mini Task Manager</h1>
+            <p>Quản lý công việc cá nhân của bạn</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Thêm công việc</h2>
+
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Tên công việc *</label>
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Nhập tên công việc..."
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dueDate">Hạn hoàn thành</label>
+                        <input type="date" id="dueDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Mức ưu tiên</label>
+                        <select id="priority">
+                            <option value="Cao">Cao</option>
+                            <option value="Trung bình" selected>Trung bình</option>
+                            <option value="Thấp">Thấp</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    + Thêm công việc
+                </button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Danh sách công việc</h2>
+
+            <div class="toolbar">
+                <div class="form-group search-group">
+                    <label for="searchInput">Tìm kiếm theo tên</label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Nhập tên cần tìm..."
+                    >
+                </div>
+
+                <div class="form-group filter-group">
+                    <label for="statusFilter">Lọc trạng thái</label>
+                    <select id="statusFilter">
+                        <option value="all">Tất cả</option>
+                        <option value="pending">Chưa hoàn thành</option>
+                        <option value="done">Đã hoàn thành</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="taskSummary" class="task-summary"></div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="emptyMessage" class="empty-message" hidden>
+                Không tìm thấy công việc nào.
+            </p>
+        </section>
+    </main>
+<footer class="site-footer">
+        <div class="container">
+            <p>Sinh viên: <span id="studentName">Phan Công Thành</span></p>
+            <p>MSSV: <span id="studentId">224001746</span></p>
+            <p>Lớp: <span>TUD D2024</span></p>
+        </div>
+    </footer>
+</body>
+</html>
+    
